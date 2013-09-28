@@ -13,7 +13,7 @@ Page {
         // PullDownMenu and PushUpMenu must be declared in SilicaFlickable, SilicaListView or SilicaGridView
         PullDownMenu {
             MenuItem {
-                text: "Show Page 2"
+                text: "About"
                 onClicked: pageStack.push(Qt.resolvedUrl("SecondPage.qml"))	            
             }
         }
@@ -27,7 +27,7 @@ Page {
             width: page.width
             spacing: Theme.paddingLarge
             PageHeader {
-                title: "UI Template"
+                title: "Soma.fm channels"
             }
             Label { 
                 x: Theme.paddingLarge
