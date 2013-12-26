@@ -4,7 +4,7 @@ import "pages"
 
 ApplicationWindow
 {
-    initialPage: FirstPage { }
+    initialPage: SailSoma {}
     cover: Qt.resolvedUrl("cover/CoverPage.qml")
 }
 

@@ -18,5 +18,6 @@ include(sailfishapplication/sailfishapplication.pri)
 
 OTHER_FILES = \
     rpm/SailSoma.yaml \
-    rpm/SailSoma.spec
+    rpm/SailSoma.spec \
+    pages/SailSoma.qml
 
