@@ -19,5 +19,6 @@ include(sailfishapplication/sailfishapplication.pri)
 OTHER_FILES = \
     rpm/SailSoma.yaml \
     rpm/SailSoma.spec \
-    pages/SailSoma.qml
+    pages/SailSoma.qml \
+    pages/About.qml
 
