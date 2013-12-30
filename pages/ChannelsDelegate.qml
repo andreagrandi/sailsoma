@@ -89,8 +89,8 @@ Component
                 }
 
                 page.currentChannel = channelName;
-                //channelPlayer.model = model
-                //pageStack.push(channelPlayer)
+                channelPlayer.model = model
+                pageStack.push(channelPlayer)
             }
         }
     }
