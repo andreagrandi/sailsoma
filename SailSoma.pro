@@ -2,10 +2,13 @@
 TARGET = SailSoma
 
 # C++ sources
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    servercomm.cpp \
+    playlistreader.cpp
 
 # C++ headers
-HEADERS +=
+HEADERS += servercomm.h \
+    playlistreader.h
 
 # QML files and folders
 qml.files = *.qml pages cover main.qml
@@ -22,3 +25,5 @@ OTHER_FILES = \
     pages/SailSoma.qml \
     pages/About.qml
 
+QT += multimedia \
+    xml
