@@ -5,11 +5,10 @@ Component
 {
     id: channelDelegate
 
-    Rectangle
+    Item
     {
         width: parent.width
         height: 130
-        //color: "black"
         id: channels
 
         Image
@@ -26,22 +25,10 @@ Component
             height: 120
         }
 
-//                Image
-//                {
-//                    id: arrow
-//                    source: privateStyle.imagePath("qtg_graf_drill_down_indicator")
-//                    width: 60
-//                    height: 60
-//                    anchors.right: parent.right
-//                    anchors.rightMargin: 5
-//                    anchors.verticalCenter: parent.verticalCenter
-//                }
-
         Column
         {
             anchors.top: parent.top
             anchors.topMargin: 5
-            //anchors.right: arrow.left
             anchors.rightMargin: 10
             anchors.left: thumb.right
             anchors.leftMargin: 20
@@ -49,48 +36,51 @@ Component
 
             Label
             {
+                id: channelNameLabel
                 text: channelName;
-                font.pixelSize: 44;
+                font.pixelSize: 28;
                 font.weight: Font.Bold;
-                maximumLineCount: 1
-                elide: Text.ElideRight
                 anchors.left: parent.left
                 anchors.right: parent.right
+                color: Theme.primaryColor
             }
 
             Label
             {
+                id: channelDescriptionLabel
                 text: channelDescription;
-                font.pixelSize: 32;
+                width: parent.width
+                font.pixelSize: 20;
                 font.weight: Font.Light;
                 maximumLineCount: 2
-                elide: Text.ElideRight
                 wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+                anchors.top: channelNameLabel.bottom
                 anchors.left: parent.left
                 anchors.right: parent.right
             }
 
             Label
             {
+                id: channelSongLabel
                 text: song;
-                font.pixelSize: 32;
+                font.pixelSize: 24;
                 font.weight: Font.Bold;
                 maximumLineCount: 1
-                elide: Text.ElideRight
                 wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+                anchors.top: channelDescriptionLabel.bottom
                 anchors.left: parent.left
                 anchors.right: parent.right
             }
         }
 
-        Rectangle
-        {
-            anchors.bottom: parent.bottom
-            height: 1
-            color: "#e4e5e7"
-            anchors.left: parent.left
-            anchors.right: parent.right
-        }
+//        Rectangle
+//        {
+//            anchors.bottom: parent.bottom
+//            height: 1
+//            color: "#e4e5e7"
+//            anchors.left: parent.left
+//            anchors.right: parent.right
+//        }
 
 //                MouseArea
 //                {
