@@ -55,7 +55,6 @@ Component
                 font.weight: Font.Light;
                 maximumLineCount: 2
                 wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-                anchors.top: channelNameLabel.bottom
                 anchors.left: parent.left
                 anchors.right: parent.right
             }
@@ -68,7 +67,6 @@ Component
                 font.weight: Font.Bold;
                 maximumLineCount: 1
                 wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-                anchors.top: channelDescriptionLabel.bottom
                 anchors.left: parent.left
                 anchors.right: parent.right
             }
