@@ -16,6 +16,10 @@ Page {
 
             PullDownMenu {
                 MenuItem {
+                    text: "Refresh"
+                    onClicked: listView.model.reload()
+                }
+                MenuItem {
                     text: "About"
                     onClicked: pageStack.push(Qt.resolvedUrl("About.qml"))
                 }

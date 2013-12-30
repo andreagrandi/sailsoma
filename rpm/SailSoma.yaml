@@ -1,13 +1,13 @@
 Name: SailSoma
-Summary: SailSoma
+Summary: Soma.fm client for SailfishOS/Jolla.
 Version: 0.1
 Release: 1
 Group: Qt/Qt
 License: LICENSE
 Sources:
 - '%{name}-%{version}.tar.bz2'
-Description: |
-  Short description of my SailfishOS Application
+Description: |-
+  SailSoma is a very simple client for the popular Soma.fm radio, a free streaming radio with more than 20 channels available.
 Configure: none
 Builder: qtc5
 PkgConfigBR:
@@ -19,7 +19,7 @@ Requires:
 - mapplauncherd-booster-silica-qt5
 - sailfishsilica-qt5
 Files:
-- 
 - /usr/bin
 - /usr/share/SailSoma
 - /usr/share/applications
+PkgBR: []
