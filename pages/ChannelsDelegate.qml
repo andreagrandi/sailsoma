@@ -29,6 +29,7 @@ Component
         {
             anchors.top: parent.top
             anchors.topMargin: 5
+            anchors.right: parent.right
             anchors.rightMargin: 10
             anchors.left: thumb.right
             anchors.leftMargin: 20
