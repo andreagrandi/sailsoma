@@ -72,14 +72,6 @@ Component
             }
         }
 
-//        Rectangle
-//        {
-//            anchors.bottom: parent.bottom
-//            height: 1
-//            color: "#e4e5e7"
-//            anchors.left: parent.left
-//            anchors.right: parent.right
-//        }
 
 //                MouseArea
 //                {
