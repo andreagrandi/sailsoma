@@ -5,14 +5,21 @@ Page
 {
     id: channelPlayer
     property QtObject model: null
+    property bool playing : false
+
+    PageHeader
+    {
+        id: pgHead
+        title: model ? model.channelName : ""
+    }
 
     BusyIndicator
-                {
-                    id: indicator
-                    running: true
-                    visible: true
-                    anchors.centerIn: parent
-                }
+    {
+        id: indicator
+        running: true
+        visible: true
+        anchors.centerIn: parent
+    }
 
     Connections
     {
@@ -21,11 +28,13 @@ Page
         onChannelLoading:
         {
             indicator.visible = true;
+            indicator.running = true;
         }
 
         onChannelLoaded:
         {
             indicator.visible = false;
+            indicator.running = false;
         }
 
         onPositionUpdate:
@@ -47,164 +56,112 @@ Page
 
         onSongPlaying:
         {
-            imgPlayP.visible = false;
-            imgPauseP.visible = true;
+            playing = true
         }
 
         onSongPaused:
         {
-            imgPlayP.visible = true;
-            imgPauseP.visible = false;
+            playing = false
         }
     }
 
-    Item
-        {
+    Column
+    {
             id: channelPortraitLayout
             visible: true
-            //anchors.verticalCenterOffset: 5
+            anchors.top: parent.top
+            anchors.topMargin: pgHead.height
             anchors.left: parent.left
             anchors.right: parent.right
-
-            Item
-            {
-                id: songItemP
-                anchors.top: parent.bottom
-                anchors.topMargin: 80
+            spacing: Theme.paddingLarge * 1.25
 
                 Image
                 {
-                    id: radioImageP
+                    id: coverImage
                     source: model ? (model.channelImageBig === "" ? model.channelImage : model.channelImageBig) : ""
-                    width: 450
-                    height: 450
+                    width: Theme.itemSizeExtraLarge * 3
+                    height: Theme.itemSizeExtraLarge * 3
                     sourceSize.height: 450
                     sourceSize.width: 450
                     asynchronous: true
                     smooth: true
-                    anchors.top: parent.top
-                    anchors.topMargin: 10
-                    anchors.left: parent.left
-                    anchors.leftMargin: 40
+                    anchors.horizontalCenter: parent.horizontalCenter
                 }
 
-                Item
+                Row
                 {
-                    anchors.top: radioImageP.bottom
-                    anchors.topMargin: 10
-                    anchors.left: parent.left
-                    anchors.leftMargin: 15
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    spacing: Theme.paddingLarge
 
-                    Label
+                    IconButton
                     {
-                        id: nameLabelP
-                        text: model ? model.channelName : ""
-                        font.pixelSize: 34;
-                        font.weight: Font.Bold;
+                        icon.source: !playing ? "image://theme/icon-l-play" : "image://theme/icon-l-pause"
+
+                        onClicked:
+                        {
+                            if (!playing)
+                            {
+                                serverComm.play();
+                            }
+                            else
+                            {
+                                serverComm.pause();
+                            }
+                        }
                     }
 
                     Label
                     {
-                        id: djLabelP
-                        text: "Dj: " + (model ? model.channelDj : "")
-                        font.pixelSize: 25;
-                        font.weight: Font.Light;
-                        anchors.top: nameLabelP.bottom
-                        anchors.topMargin: 10
-                    }
-
-                    Label
-                    {
-                        id: descriptionLabelP
-                        text: model ? model.channelDescription : ""
-                        font.pixelSize: 25;
-                        font.weight: Font.Light;
-                        width: channelPlayer.width - 20
-                        wrapMode: "WordWrap";
-                        anchors.top: djLabelP.bottom
-                        anchors.topMargin: 10
-                    }
-
-                    Label
-                    {
-                        id: listenersLabelP
-                        text: "Listeners: " + (model ? model.channelListeners : "")
-                        font.pixelSize: 25;
-                        font.weight: Font.Light;
-                        anchors.top: descriptionLabelP.bottom
-                        anchors.topMargin: 10
-                    }
-
-                    Label
-                    {
-                        id: songLabelP
-                        text: model ? model.song : ""
-                        font.pixelSize: 25;
-                        font.weight: Font.Bold;
-                        anchors.top: listenersLabelP.bottom
-                        anchors.topMargin: 10
-                        width: channelPlayer.width - 30
-                        wrapMode: "WordWrap"
+                        id: counterLabelP
+                        text: "00:00"
+                        font.pixelSize: Theme.fontSizeExtraLarge
+                        color: playing ? Theme.highlightColor : Theme.primaryColor
                     }
                 }
-            }
 
-            Item
-            {
-                id: controlRowP
-                anchors.top: songLabelP.bottom
+           Column
+           {
+
                 anchors.left: parent.left
+                anchors.leftMargin: Theme.paddingLarge
                 anchors.right: parent.right
-                anchors.leftMargin: 15
+                anchors.rightMargin: Theme.paddingLarge
+                spacing: Theme.paddingSmall
 
-                Button
+                Label
                 {
-                    id: playStopButtonP
-
-                    Image
-                    {
-                        id: imgPlayP
-                        anchors.centerIn: parent
-                        visible: false
-                        source: "image://theme/icon-m-play"
-                    }
-
-                    Image
-                    {
-                        id: imgPauseP
-                        anchors.centerIn: parent
-                        source: "image://theme/icon-m-pause"
-                    }
-
-                    onClicked:
-                    {
-                        if (imgPlayP.visible)
-                        {
-                            imgPlayP.visible = false;
-                            imgPauseP.visible = true;
-
-                            serverComm.play();
-                        }
-                        else
-                        {
-                            imgPlayP.visible = true;
-                            imgPauseP.visible = false;
-
-                            serverComm.pause();
-                        }
-                    }
+                    id: songLabelP
+                    text: model ? model.song : ""
+                    font.pixelSize: Theme.fontSizeSmall
+                    font.weight: Font.Bold;
+                    width: parent.width
+                    wrapMode: "WordWrap"
                 }
 
                 Label
                 {
-                    id: counterLabelP
-                    text: "00:00"
-                    anchors.left: playStopButtonP.right
-                    anchors.leftMargin: 50
-                    anchors.top: parent.top
-                    anchors.topMargin: 15
+                    text: "Dj: " + (model ? model.channelDj : "")
+                    font.pixelSize: Theme.fontSizeSmall
+                    color: Theme.secondaryColor
                 }
-            }
 
-        }
+                Label
+                {
+                    text: model ? model.channelDescription : ""
+                    font.pixelSize: Theme.fontSizeSmall
+                    color: Theme.secondaryColor
+                    width: parent.width
+                    wrapMode: "WordWrap";
+                }
+
+                Label
+                {
+                    text: "Listeners: " + (model ? model.channelListeners : "")
+                    font.pixelSize: Theme.fontSizeSmall
+                    color: Theme.secondaryColor
+                }
+
+            }
+    }
+
 }
