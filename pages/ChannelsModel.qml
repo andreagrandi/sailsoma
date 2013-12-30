@@ -16,20 +16,4 @@ XmlListModel
     XmlRole { name: "channelDj"; query: "dj/string()" }
     XmlRole { name: "channelListeners"; query: "listeners/string()" }
     XmlRole { name: "songUrlFast"; query: "fastpls[1]/string()" }
-
-//            onStatusChanged:
-//            {
-//                if(status == XmlListModel.Ready)
-//                {
-//                    channelLoadingIndicator.visible = false;
-//                }
-//                else if(status == XmlListModel.Error)
-//                {
-//                    channelLoadingIndicator.visible = false;
-//                }
-//                else if(status == XmlListModel.Loading)
-//                {
-//                    channelLoadingIndicator.visible = true;
-//                }
-//            }
 }

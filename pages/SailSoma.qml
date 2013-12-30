@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import QtQuick.XmlListModel 2.0
 
 Page {
     id: page
@@ -9,6 +10,11 @@ Page {
             model: ChannelsModel {}
             delegate: ChannelsDelegate {}
             anchors.fill: parent
+
+            BusyIndicator {
+                    anchors.centerIn: parent
+                    running: listView.model.status == XmlListModel.Loading
+                }
 
             header: PageHeader {
                 title: "Soma.fm channels"
