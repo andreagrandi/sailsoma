@@ -73,25 +73,25 @@ Component
         }
 
 
-//                MouseArea
-//                {
-//                    id: mouseArea
-//                    anchors.fill: parent
+        MouseArea
+        {
+            id: mouseArea
+            anchors.fill: parent
 
-//                    onClicked:
-//                    {
-//                        console.debug(channelName + " clicked");
-//                        console.debug(songUrlFast);
+            onClicked:
+            {
+                console.debug(channelName + " clicked");
+                console.debug(songUrlFast);
 
-//                        if (mainPage.currentChannel != channelName)
-//                        {
-//                            serverComm.loadChannel(songUrlFast)
-//                        }
+                if (page.currentChannel != channelName)
+                {
+                    serverComm.loadChannel(songUrlFast)
+                }
 
-//                        mainPage.currentChannel = channelName;
-//                        channelPlayer.model = model
-//                        pageStack.push(channelPlayer)
-//                    }
-//                }
+                page.currentChannel = channelName;
+                //channelPlayer.model = model
+                //pageStack.push(channelPlayer)
+            }
+        }
     }
 }

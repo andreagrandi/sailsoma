@@ -4,6 +4,7 @@ import QtQuick.XmlListModel 2.0
 
 Page {
     id: page
+    property string currentChannel: ""
 
         SilicaListView {
             id: listView
