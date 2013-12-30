@@ -5,3 +5,5 @@ debuglinks.list
 debugsources.list
 obj/
 rpm/
+.DS_Store
+
