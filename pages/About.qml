@@ -2,20 +2,45 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 Page {
-    id: page
-    SilicaListView {
-        id: listView
-        model: 20
-        anchors.fill: parent
-        header: PageHeader {
-            title: "About SailSoma"
-        }
-        delegate: BackgroundItem {
-            Label {
-                x: Theme.paddingLarge
-                text: "Item " + index
+    id: aboutPage
+
+    Column
+        {
+            spacing: 10
+            anchors.verticalCenterOffset: 3
+            anchors.centerIn: parent
+
+            Image
+            {
+                source: "images/SailSoma_500x500.png"
+                anchors.horizontalCenter: parent.horizontalCenter
             }
-            onClicked: console.log("Clicked " + index)
+
+            Label
+            {
+                text: "SailSoma 0.1"
+                font.pixelSize: 48
+                font.weight: Font.Bold;
+                anchors.horizontalCenter: parent.horizontalCenter
+            }
+
+            Label
+            {
+                text: "Soma.fm client for SailfishOS"
+                font.pixelSize: 34
+                anchors.horizontalCenter: parent.horizontalCenter
+            }
+
+            Label
+            {
+                text: "Released under the BSD license."
+                anchors.horizontalCenter: parent.horizontalCenter
+            }
+
+            Label
+            {
+                text: "Andrea Grandi <a.grandi@gmail.com>"
+                anchors.horizontalCenter: parent.horizontalCenter
+            }
         }
-    }
 }
