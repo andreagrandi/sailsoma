@@ -18,7 +18,7 @@ Page {
 
             Label
             {
-                text: "SailSoma 0.2"
+                text: "SailSoma 0.2.1"
                 font.pixelSize: 48
                 font.weight: Font.Bold;
                 anchors.horizontalCenter: parent.horizontalCenter
