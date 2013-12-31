@@ -1,5 +1,5 @@
 # The name of your app
-TARGET = SailSoma
+TARGET = harbour-sailsoma
 
 # C++ sources
 SOURCES += main.cpp \
@@ -14,20 +14,20 @@ HEADERS += servercomm.h \
 qml.files = *.qml pages cover main.qml
 
 # The .desktop file
-desktop.files = SailSoma.desktop
+desktop.files = harbour-sailsoma.desktop
 
 # Please do not modify the following line.
 include(sailfishapplication/sailfishapplication.pri)
 
 OTHER_FILES = \
-    rpm/SailSoma.yaml \
-    rpm/SailSoma.spec \
+    rpm/harbour-sailsoma.spec \
     pages/SailSoma.qml \
-    pages/About.qml
+    pages/About.qml \
+    rpm/harbour-sailsoma.yaml
 
 QT += multimedia \
     xml
 
 icon.path = /usr/share/icons/hicolor/86x86/apps/
-icon.files = sailsoma.png
+icon.files = harbour-sailsoma.png
 INSTALLS += icon

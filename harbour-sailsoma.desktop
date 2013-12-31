@@ -1,8 +1,7 @@
 [Desktop Entry]
 Type=Application
 Name=SailSoma
-Icon=sailsoma
-Exec=invoker --type=silica-qt5 -s /usr/bin/SailSoma
-Comment=Sailfish UI application
-
-
+Icon=harbour-sailsoma
+Exec=harbour-sailsoma
+Comment=Soma.fm client for SailfishOS
+X-Nemo-Application-Type=silica-qt5
