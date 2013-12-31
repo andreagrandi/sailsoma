@@ -1,23 +1,17 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 
-CoverBackground {
-    Label {
-        id: coverLabel
-        anchors.centerIn: parent
+CoverBackground
+{
+    id: coverBackgroundId
+
+    CoverPlaceholder
+    {
+        id: coverPlaceholderId
         text: "SailSoma"
-    }
-    
-    CoverActionList {
-        id: coverAction
-        
-        CoverAction {
-            iconSource: "image://theme/icon-cover-next"
-        }
-        
-        CoverAction {
-            iconSource: "image://theme/icon-cover-pause"
-        }
+        icon.source: "sailsoma.png"
+        icon.width: 120
+        icon.height: 120
     }
 }
 
