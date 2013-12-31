@@ -5,6 +5,13 @@ Page
 {
     id: channelPlayer
     property QtObject model: null
+    property bool playing : false
+
+    PageHeader
+    {
+        id: pgHead
+        title: model ? model.channelName : ""
+    }
 
     BusyIndicator
     {
@@ -47,14 +54,12 @@ Page
 
         onSongPlaying:
         {
-            imgPlayP.visible = false;
-            imgPauseP.visible = true;
+            playing = true
         }
 
         onSongPaused:
         {
-            imgPlayP.visible = true;
-            imgPauseP.visible = false;
+            playing = false
         }
     }
 
@@ -62,23 +67,15 @@ Page
     {
         id: channelPortraitLayout
         visible: true
-        anchors.fill: parent
-        anchors.topMargin: 100
+        anchors.top: parent.top
+        anchors.topMargin: pgHead.height
+        anchors.left: parent.left
+        anchors.right: parent.right
 
         Item
         {
             id: songItemP
             anchors.fill: parent
-
-            Label
-            {
-                id: nameLabelP
-                text: model ? model.channelName : ""
-                font.pixelSize: 38;
-                font.weight: Font.Bold;
-                anchors.horizontalCenter: parent.horizontalCenter
-                anchors.top: parent.top
-            }
 
             Image
             {
@@ -88,8 +85,8 @@ Page
                 height: 480
                 asynchronous: true
                 smooth: true
-                anchors.top: nameLabelP.bottom
-                anchors.topMargin: 20
+                anchors.top: parent.top
+                anchors.topMargin: pgHead.height
                 anchors.horizontalCenter: parent.horizontalCenter
             }
 
@@ -114,7 +111,7 @@ Page
                 anchors.horizontalCenter: parent.horizontalCenter
             }
 
-            Button
+            IconButton
             {
                 id: playStopButtonP
                 anchors.top: counterLabelP.bottom
@@ -122,35 +119,16 @@ Page
                 anchors.left: parent.left
                 anchors.right: parent.right
 
-                Image
-                {
-                    id: imgPlayP
-                    anchors.centerIn: parent
-                    visible: false
-                    source: "image://theme/icon-m-play"
-                }
-
-                Image
-                {
-                    id: imgPauseP
-                    anchors.centerIn: parent
-                    source: "image://theme/icon-m-pause"
-                }
+                icon.source: !playing ? "image://theme/icon-l-play" : "image://theme/icon-l-pause"
 
                 onClicked:
                 {
-                    if (imgPlayP.visible)
+                    if (!playing)
                     {
-                        imgPlayP.visible = false;
-                        imgPauseP.visible = true;
-
                         serverComm.play();
                     }
                     else
                     {
-                        imgPlayP.visible = true;
-                        imgPauseP.visible = false;
-
                         serverComm.pause();
                     }
                 }
