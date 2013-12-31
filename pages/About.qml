@@ -18,7 +18,7 @@ Page {
 
             Label
             {
-                text: "SailSoma 0.1"
+                text: "SailSoma 0.2"
                 font.pixelSize: 48
                 font.weight: Font.Bold;
                 anchors.horizontalCenter: parent.horizontalCenter
@@ -35,12 +35,21 @@ Page {
             {
                 text: "Released under the BSD license."
                 anchors.horizontalCenter: parent.horizontalCenter
+                font.pixelSize: 24
             }
 
             Label
             {
                 text: "Andrea Grandi <a.grandi@gmail.com>"
                 anchors.horizontalCenter: parent.horizontalCenter
+                font.pixelSize: 28
+            }
+
+            Label
+            {
+                text: "Filip Kłębczyk <fklebczyk@gmail.com>"
+                anchors.horizontalCenter: parent.horizontalCenter
+                font.pixelSize: 28
             }
         }
 }

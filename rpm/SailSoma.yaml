@@ -1,6 +1,6 @@
 Name: SailSoma
 Summary: Soma.fm client for SailfishOS/Jolla.
-Version: 0.1
+Version: 0.2
 Release: 1
 Group: Qt/Qt
 License: LICENSE
@@ -22,4 +22,6 @@ Files:
 - /usr/share/applications
 - /usr/share/SailSoma
 - /usr/bin
+- /usr/share/applications/
+- /usr/share/icons/hicolor/86x86/apps/
 PkgBR: []
