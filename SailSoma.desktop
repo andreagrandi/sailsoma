@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
 Name=SailSoma
-Icon=icon-launcher-default
+Icon=sailsoma
 Exec=invoker --type=silica-qt5 -s /usr/bin/SailSoma
 Comment=Sailfish UI application
 

@@ -27,3 +27,7 @@ OTHER_FILES = \
 
 QT += multimedia \
     xml
+
+icon.path = /usr/share/icons/hicolor/86x86/apps/
+icon.files = sailsoma.png
+INSTALLS += icon
