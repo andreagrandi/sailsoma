@@ -96,10 +96,15 @@ Page
                 text: model ? model.song : ""
                 font.pixelSize: 25;
                 font.weight: Font.Bold;
-                wrapMode: "WordWrap"
+                wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+                horizontalAlignment: Text.AlignHCenter
                 anchors.top: radioImageP.bottom
                 anchors.topMargin: 20
                 anchors.horizontalCenter: parent.horizontalCenter
+                anchors.left: parent.left
+                anchors.leftMargin: 10
+                anchors.right: parent.right
+                anchors.rightMargin: 10
             }
 
             Label
