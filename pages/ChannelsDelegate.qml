@@ -85,7 +85,8 @@ Component
 
                 if (page.currentChannel != channelName)
                 {
-                    serverComm.loadChannel(songUrlFast)
+                    serverComm.loadChannel(songUrlFast);
+                    serverComm.updateChannelInfo(model.channelId);
                 }
 
                 page.currentChannel = channelName;
