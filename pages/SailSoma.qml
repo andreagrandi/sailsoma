@@ -6,10 +6,10 @@ Page {
     id: page
     property string currentChannel: ""
     ChannelPlayer { id: channelPlayer }
+    property alias model: listView.model
 
         SilicaListView {
             id: listView
-            model: ChannelsModel {}
             delegate: ChannelsDelegate {}
             anchors.fill: parent
 
