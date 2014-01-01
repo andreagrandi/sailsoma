@@ -86,7 +86,7 @@ Page
                 asynchronous: true
                 smooth: true
                 anchors.top: parent.top
-                anchors.topMargin: pgHead.height
+                anchors.topMargin: 30
                 anchors.horizontalCenter: parent.horizontalCenter
             }
 
