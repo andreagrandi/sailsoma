@@ -20,7 +20,6 @@ Requires:
 - mapplauncherd-booster-silica-qt5
 Files:
 - /usr/share/harbour-sailsoma
-- /usr/share/applications
 - /usr/bin
 - /usr/share/applications/
 - /usr/share/icons/hicolor/86x86/apps/
