@@ -23,7 +23,8 @@ OTHER_FILES = \
     rpm/harbour-sailsoma.spec \
     pages/SailSoma.qml \
     pages/About.qml \
-    rpm/harbour-sailsoma.yaml
+    rpm/harbour-sailsoma.yaml \
+    LICENSE
 
 QT += multimedia \
     xml
