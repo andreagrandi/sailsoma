@@ -35,21 +35,21 @@ Page {
             {
                 text: "Released under the BSD license."
                 anchors.horizontalCenter: parent.horizontalCenter
-                font.pixelSize: Theme.fontSizeSmall
+                font.pixelSize: Theme.fontSizeExtraSmall
             }
 
             Label
             {
                 text: "Andrea Grandi <a.grandi@gmail.com>"
                 anchors.horizontalCenter: parent.horizontalCenter
-                font.pixelSize: Theme.fontSizeMedium
+                font.pixelSize: Theme.fontSizeSmall
             }
 
             Label
             {
                 text: "Filip Kłębczyk <fklebczyk@gmail.com>"
                 anchors.horizontalCenter: parent.horizontalCenter
-                font.pixelSize: Theme.fontSizeMedium
+                font.pixelSize: Theme.fontSizeSmall
             }
         }
 }
