@@ -8,38 +8,36 @@ Component
     Item
     {
         width: parent.width
-        height: 130
+        height: Theme.itemSizeExtraLarge
         id: channels
 
         Image
         {
             id: thumb
             source: channelImage
-            sourceSize.height: 120
-            sourceSize.width: 120
+            sourceSize.height: Theme.itemSizeExtraLarge - Theme.paddingSmall
+            sourceSize.width: Theme.itemSizeExtraLarge - Theme.paddingSmall
             asynchronous: true
             anchors.verticalCenter: parent.verticalCenter
             anchors.left: parent.left
-            anchors.leftMargin: 0
-            width: 120
-            height: 120
+            anchors.leftMargin: Theme.paddingSmall
+            width: Theme.itemSizeExtraLarge - Theme.paddingSmall
+            height: Theme.itemSizeExtraLarge - Theme.paddingSmall
         }
 
         Column
         {
             anchors.top: parent.top
-            anchors.topMargin: 5
             anchors.right: parent.right
-            anchors.rightMargin: 10
+            anchors.rightMargin: Theme.paddingMedium
             anchors.left: thumb.right
-            anchors.leftMargin: 20
-            spacing: 4
+            anchors.leftMargin: Theme.paddingMedium
 
             Label
             {
                 id: channelNameLabel
                 text: channelName;
-                font.pixelSize: 28;
+                font.pixelSize: Theme.fontSizeMedium
                 font.weight: Font.Bold;
                 anchors.left: parent.left
                 anchors.right: parent.right
@@ -51,7 +49,7 @@ Component
                 id: channelDescriptionLabel
                 text: channelDescription;
                 width: parent.width
-                font.pixelSize: 20;
+                font.pixelSize: Theme.fontSizeTiny
                 font.weight: Font.Light;
                 maximumLineCount: 2
                 wrapMode: Text.WrapAtWordBoundaryOrAnywhere
@@ -63,7 +61,7 @@ Component
             {
                 id: channelSongLabel
                 text: song;
-                font.pixelSize: 24;
+                font.pixelSize: Theme.fontSizeSmall
                 font.weight: Font.Bold;
                 maximumLineCount: 1
                 wrapMode: Text.WrapAtWordBoundaryOrAnywhere
