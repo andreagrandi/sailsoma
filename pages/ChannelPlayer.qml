@@ -86,7 +86,7 @@ Page
                 asynchronous: true
                 smooth: true
                 anchors.top: parent.top
-                anchors.topMargin: 30
+                anchors.topMargin: Theme.paddingLarge
                 anchors.horizontalCenter: parent.horizontalCenter
             }
 
@@ -94,24 +94,25 @@ Page
             {
                 id: songLabelP
                 text: model ? model.song : ""
-                font.pixelSize: 25;
+                font.pixelSize: Theme.fontSizeSmall
                 font.weight: Font.Bold;
                 wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                 horizontalAlignment: Text.AlignHCenter
                 anchors.top: radioImageP.bottom
-                anchors.topMargin: 20
+                anchors.topMargin: Theme.paddingLarge
                 anchors.left: parent.left
-                anchors.leftMargin: 10
+                anchors.leftMargin: Theme.paddingSmall
                 anchors.right: parent.right
-                anchors.rightMargin: 10
+                anchors.rightMargin: Theme.paddingSmall
             }
 
             Label
             {
                 id: counterLabelP
                 text: "00:00"
+                font.pixelSize: Theme.fontSizeSmall
                 anchors.top: songLabelP.bottom
-                anchors.topMargin: 20
+                anchors.topMargin: Theme.paddingMedium
                 anchors.horizontalCenter: parent.horizontalCenter
             }
 
@@ -119,7 +120,7 @@ Page
             {
                 id: playStopButtonP
                 anchors.top: counterLabelP.bottom
-                anchors.topMargin: 20
+                anchors.topMargin: Theme.paddingMedium
                 anchors.left: parent.left
                 anchors.right: parent.right
 
