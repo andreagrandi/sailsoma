@@ -100,7 +100,6 @@ Page
                 horizontalAlignment: Text.AlignHCenter
                 anchors.top: radioImageP.bottom
                 anchors.topMargin: 20
-                anchors.horizontalCenter: parent.horizontalCenter
                 anchors.left: parent.left
                 anchors.leftMargin: 10
                 anchors.right: parent.right
