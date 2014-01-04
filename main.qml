@@ -7,7 +7,25 @@ import "cover"
 ApplicationWindow
 {
     id: sailSomaWindow
+
+    property string coverTitle: "SailSoma"
+    property url coverImage: "cover/sailsoma.png"
+
     ChannelsModel { id: channelsModel }
-    initialPage: Component { SailSoma { model: channelsModel } }
-    cover: Component { CoverPage { model: channelsModel } }
+
+    cover: Component { CoverPage { id: sailSomaCover } }
+
+    initialPage: Component {
+        SailSoma {
+            model: channelsModel
+
+            onCoverTitleUpdate: {
+                sailSomaWindow.coverTitle = value
+            }
+
+            onCoverImageUpdate: {
+                sailSomaWindow.coverImage = value
+            }
+        }
+    }
 }

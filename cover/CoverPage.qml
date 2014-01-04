@@ -4,16 +4,14 @@ import QtQuick.XmlListModel 2.0
 
 CoverBackground
 {
-    id: coverBackgroundId;
-    property XmlListModel model;
+    property QtObject model;
+    property alias text: coverPlaceholderId.text;
 
     CoverPlaceholder
     {
         id: coverPlaceholderId
-        //text: coverBackgroundId.model.channelName
-        //icon.source: coverBackgroundId.model.channelImage
-        text: "SailSoma"
-        icon.source: "sailsoma.png"
+        text: coverTitle
+        icon.source: coverImage
         icon.width: 120
         icon.height: 120
     }

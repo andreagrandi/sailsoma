@@ -87,6 +87,8 @@ Component
                 {
                     serverComm.loadChannel(songUrlFast);
                     serverComm.updateChannelInfo(model.channelId);
+                    coverTitleUpdate(channelName)
+                    coverImageUpdate(channelImage)
                 }
 
                 page.currentChannel = channelName;

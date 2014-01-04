@@ -7,6 +7,9 @@ Page {
     property string currentChannel: ""
     ChannelPlayer { id: channelPlayer }
     property alias model: listView.model
+    property QtObject cover
+    signal coverTitleUpdate(string value)
+    signal coverImageUpdate(url value)
 
         SilicaListView {
             id: listView
