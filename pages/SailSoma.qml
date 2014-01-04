@@ -11,29 +11,29 @@ Page {
     signal coverTitleUpdate(string value)
     signal coverImageUpdate(url value)
 
-        SilicaListView {
-            id: listView
-            delegate: ChannelsDelegate {}
-            anchors.fill: parent
+    SilicaListView {
+        id: listView
+        delegate: ChannelsDelegate {}
+        anchors.fill: parent
 
-            BusyIndicator {
-                    anchors.centerIn: parent
-                    running: listView.model.status == XmlListModel.Loading
-                }
-
-            header: PageHeader {
-                title: "Soma.fm channels"
+        BusyIndicator {
+                anchors.centerIn: parent
+                running: listView.model.status == XmlListModel.Loading
             }
 
-            PullDownMenu {
-                MenuItem {
-                    text: "Refresh"
-                    onClicked: listView.model.reload()
-                }
-                MenuItem {
-                    text: "About"
-                    onClicked: pageStack.push(Qt.resolvedUrl("About.qml"))
-                }
+        header: PageHeader {
+            title: "Soma.fm channels"
+        }
+
+        PullDownMenu {
+            MenuItem {
+                text: "Refresh"
+                onClicked: listView.model.reload()
+            }
+            MenuItem {
+                text: "About"
+                onClicked: pageStack.push(Qt.resolvedUrl("About.qml"))
             }
         }
+    }
 }
