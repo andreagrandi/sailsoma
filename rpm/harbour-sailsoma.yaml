@@ -1,6 +1,6 @@
 Name: harbour-sailsoma
 Summary: SailSoma
-Version: 0.2.3
+Version: 0.3
 Release: 1
 Group: Qt/Qt
 License: 'BSD'
@@ -11,16 +11,17 @@ Description: |-
 Configure: none
 Builder: qtc5
 PkgConfigBR:
-- qdeclarative5-boostable
-- Qt5Core
-- Qt5Qml
 - Qt5Quick
+- Qt5Qml
+- Qt5Core
+- qdeclarative5-boostable
 Requires:
-- sailfishsilica-qt5
 - mapplauncherd-booster-silica-qt5
+- sailfishsilica-qt5
 Files:
-- /usr/share/harbour-sailsoma
-- /usr/bin
-- /usr/share/applications/
 - /usr/share/icons/hicolor/86x86/apps/
+- /usr/share/applications/
+- /usr/bin
+- /usr/share/harbour-sailsoma
+- /usr/share/applications
 PkgBR: []
