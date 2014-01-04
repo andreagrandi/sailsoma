@@ -11,7 +11,7 @@ CoverBackground
         id: coverPlaceholderId
         text: coverTitle
         icon.source: coverImage
-        icon.width: 120
-        icon.height: 120
+        icon.width: Theme.iconSizeLarge * 1.2
+        icon.height: Theme.iconSizeLarge * 1.2
     }
 }
