@@ -11,11 +11,12 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 {
     QQuickWindow::setDefaultAlphaBuffer(true);
     QScopedPointer<QGuiApplication> app(Sailfish::createApplication(argc, argv));
-    QScopedPointer<QQuickView> view(Sailfish::createView("main.qml"));
+    QScopedPointer<QQuickView> view(Sailfish::createView());
 
     ServerComm sc;
     view->rootContext()->setContextProperty("serverComm", &sc);
-    
+
+    Sailfish::setView(view.data(), "main.qml");
     Sailfish::showView(view.data());
     
     return app->exec();
