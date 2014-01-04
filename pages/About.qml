@@ -6,7 +6,7 @@ Page {
 
     Column
         {
-            spacing: 10
+            spacing: Theme.paddingSmall
             anchors.verticalCenterOffset: 3
             anchors.centerIn: parent
 
@@ -19,7 +19,7 @@ Page {
             Label
             {
                 text: "SailSoma 0.3"
-                font.pixelSize: 48
+                font.pixelSize: Theme.fontSizeExtraLarge
                 font.weight: Font.Bold;
                 anchors.horizontalCenter: parent.horizontalCenter
             }
@@ -27,7 +27,7 @@ Page {
             Label
             {
                 text: "Soma.fm client for SailfishOS"
-                font.pixelSize: 34
+                font.pixelSize: Theme.fontSizeLarge
                 anchors.horizontalCenter: parent.horizontalCenter
             }
 
@@ -35,21 +35,21 @@ Page {
             {
                 text: "Released under the BSD license."
                 anchors.horizontalCenter: parent.horizontalCenter
-                font.pixelSize: 24
+                font.pixelSize: Theme.fontSizeSmall
             }
 
             Label
             {
                 text: "Andrea Grandi <a.grandi@gmail.com>"
                 anchors.horizontalCenter: parent.horizontalCenter
-                font.pixelSize: 28
+                font.pixelSize: Theme.fontSizeMedium
             }
 
             Label
             {
                 text: "Filip Kłębczyk <fklebczyk@gmail.com>"
                 anchors.horizontalCenter: parent.horizontalCenter
-                font.pixelSize: 28
+                font.pixelSize: Theme.fontSizeMedium
             }
         }
 }
