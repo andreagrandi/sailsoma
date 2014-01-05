@@ -4,6 +4,7 @@ Version: 0.3.2
 Release: 1
 Group: Qt/Qt
 License: 'BSD'
+URL: https://github.com/andreagrandi/sailsoma
 Sources:
 - '%{name}-%{version}.tar.bz2'
 Description: |-
