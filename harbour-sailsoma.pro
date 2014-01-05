@@ -33,12 +33,11 @@ OTHER_FILES = \
     LICENSE \
     harbour-sailsoma.desktop
 
-QT += multimedia xml quick qml
+QT += multimedia xml
 
 icon.path = /usr/share/icons/hicolor/86x86/apps/
 icon.files = harbour-sailsoma.png
 
-#TARGETPATH = /usr/bin
-#target.path = $$TARGETPATH
-#DEPLOYMENT_PATH = /usr/share/$$TARGET
-#INSTALLS += icon target desktop
+TARGETPATH = /usr/bin
+target.path = $$TARGETPATH
+INSTALLS += icon target desktop
