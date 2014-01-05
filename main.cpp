@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
     QScopedPointer<QQuickView> view(SailfishApp::createView());
     ServerComm sc;
     view->rootContext()->setContextProperty("serverComm", &sc);
-    view->setSource(SailfishApp::pathTo("main.qml"));
+    view->setSource(SailfishApp::pathTo("qml/main.qml"));
     view->showFullScreen();
     return app->exec();
 }
