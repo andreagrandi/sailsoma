@@ -12,14 +12,21 @@ Description: |-
 Configure: none
 Builder: qtc5
 PkgConfigBR:
-- qdeclarative5-boostable
-- Qt5Core
-- Qt5Qml
 - Qt5Quick
+- Qt5Qml
+- Qt5Core
+- qdeclarative5-boostable
 Requires:
 - sailfishsilica-qt5
 Files:
-- /usr/share/icons/hicolor/86x86/apps
-- /usr/share/applications
+- '%{_bindir}'
+- '%{_datadir}/%{name}/cover'
+- '%{_datadir}/%{name}/pages'
+- '%{_datadir}/%{name}/main.qml'
+- '%{_datadir}/applications/%{name}.desktop'
+- '%{_datadir}/icons/hicolor/86x86/apps/%{name}.png'
+- /usr/share/harbour-sailsoma
 - /usr/bin
+- /usr/share/applications
+- /usr/share/icons/hicolor/86x86/apps
 PkgBR: []
