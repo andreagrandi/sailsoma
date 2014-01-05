@@ -10,15 +10,6 @@ SOURCES += main.cpp \
 HEADERS += servercomm.h \
     playlistreader.h
 
-# QML files and folders
-qml.files = qml/*.qml qml/pages qml/cover qml/main.qml
-
-# The .desktop file
-desktop.files = harbour-sailsoma.desktop
-
-# Please do not modify the following line.
-include(sailfishapplication/sailfishapplication.pri)
-
 OTHER_FILES = \
     rpm/harbour-sailsoma.spec \
     qml/pages/SailSoma.qml \
@@ -29,6 +20,4 @@ OTHER_FILES = \
 QT += multimedia \
     xml
 
-icon.path = /usr/share/icons/hicolor/86x86/apps/
-icon.files = harbour-sailsoma.png
-INSTALLS += icon
+CONFIG += sailfishapp
