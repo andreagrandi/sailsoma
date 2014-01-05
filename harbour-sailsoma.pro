@@ -14,10 +14,6 @@ HEADERS += servercomm.h \
 
 INCLUDEPATH += $$PWD
 
-# The .desktop file
-#desktop.files = harbour-sailsoma.desktop
-#desktop.path = /usr/share/applications
-
 OTHER_FILES = \
     main.qml \
     pages/SailSoma.qml \
