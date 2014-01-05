@@ -11,7 +11,7 @@ HEADERS += servercomm.h \
     playlistreader.h
 
 # QML files and folders
-qml.files = *.qml pages cover main.qml
+qml.files = qml/*.qml qml/pages qml/cover qml/main.qml
 
 # The .desktop file
 desktop.files = harbour-sailsoma.desktop
@@ -21,8 +21,8 @@ include(sailfishapplication/sailfishapplication.pri)
 
 OTHER_FILES = \
     rpm/harbour-sailsoma.spec \
-    pages/SailSoma.qml \
-    pages/About.qml \
+    qml/pages/SailSoma.qml \
+    qml/pages/About.qml \
     rpm/harbour-sailsoma.yaml \
     LICENSE
 

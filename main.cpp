@@ -16,7 +16,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     ServerComm sc;
     view->rootContext()->setContextProperty("serverComm", &sc);
 
-    Sailfish::setView(view.data(), "main.qml");
+    Sailfish::setView(view.data(), "qml/main.qml");
     Sailfish::showView(view.data());
     
     return app->exec();
