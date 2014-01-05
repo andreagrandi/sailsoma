@@ -12,12 +12,11 @@ SOURCES += main.cpp \
 HEADERS += servercomm.h \
     playlistreader.h
 
-# The .desktop file
-desktop.files = harbour-sailsoma.desktop
-desktop.path = /usr/share/applications
+INCLUDEPATH += $$PWD
 
-# Please do not modify the following line.
-#include(sailfishapplication/sailfishapplication.pri)
+# The .desktop file
+#desktop.files = harbour-sailsoma.desktop
+#desktop.path = /usr/share/applications
 
 OTHER_FILES = \
     main.qml \
@@ -31,14 +30,15 @@ OTHER_FILES = \
     cover/sailsoma.png \
     rpm/harbour-sailsoma.spec \
     rpm/harbour-sailsoma.yaml \
-    LICENSE
+    LICENSE \
+    harbour-sailsoma.desktop
 
 QT += multimedia xml quick qml
 
 icon.path = /usr/share/icons/hicolor/86x86/apps/
 icon.files = harbour-sailsoma.png
-INSTALLS += icon target qml desktop
 
-TARGETPATH = /usr/bin
-target.path = $$TARGETPATH
-DEPLOYMENT_PATH = /usr/share/$$TARGET
+#TARGETPATH = /usr/bin
+#target.path = $$TARGETPATH
+#DEPLOYMENT_PATH = /usr/share/$$TARGET
+#INSTALLS += icon target desktop
